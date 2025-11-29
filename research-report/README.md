@@ -192,7 +192,8 @@ Confirms: correct scaling rules, duration choice, and industrial DSM effectivene
 ---
 
 # 📚 References & Readings
-All references, IEA reports, and literature used in the analysis are included in the `readings/` folder.  
+All references, IEA reports, and literature used in the analysis are included in the `readings/` folder.
+
 The full research report is here: **`report/TEK5410_report.pdf`**
 
 ---
