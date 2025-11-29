@@ -1,0 +1,23 @@
+# requirements.txt
+# Germany Electricity System Scenarios - TEK5410
+# BESS + DSM Flexibility Optimization
+
+# Core data science
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Plotting & Visualization
+plotly>=5.15.0
+kaleido>=0.2.1
+
+# Optional: Enhanced plotting (if you want to add seaborn/matplotlib later)
+# seaborn>=0.12.0
+# matplotlib>=3.7.0
+
+# Development & reproducibility
+python-dateutil>=2.8.0
+
+# Notes:
+# - kaleido REQUIRED for PNG export
+# - plotly >=5.15.0 for latest features
+# - pandas/numpy for data processing

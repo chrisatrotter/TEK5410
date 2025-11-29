@@ -1,0 +1,126 @@
+"renewable electricity generation by source (non-combustible) in Germany",Value,Year,Units
+"Hydropower",25962,2000, GWh
+"Hydropower",27253,2001, GWh
+"Hydropower",27864,2002, GWh
+"Hydropower",22897,2003, GWh
+"Hydropower",26460,2004, GWh
+"Hydropower",26417,2005, GWh
+"Hydropower",26791,2006, GWh
+"Hydropower",28084,2007, GWh
+"Hydropower",26469,2008, GWh
+"Hydropower",24681,2009, GWh
+"Hydropower",27353,2010, GWh
+"Hydropower",23512,2011, GWh
+"Hydropower",27850,2012, GWh
+"Hydropower",28782,2013, GWh
+"Hydropower",25444,2014, GWh
+"Hydropower",24898,2015, GWh
+"Hydropower",26134,2016, GWh
+"Hydropower",26155,2017, GWh
+"Hydropower",23863,2018, GWh
+"Hydropower",25671,2019, GWh
+"Hydropower",25275,2020, GWh
+"Hydropower",24972,2021, GWh
+"Hydropower",23576,2022, GWh
+"Hydropower",25337,2023, GWh
+"Hydropower",28862,2024, GWh
+"Wind",9352,2000, GWh
+"Wind",10456,2001, GWh
+"Wind",15856,2002, GWh
+"Wind",19087,2003, GWh
+"Wind",26019,2004, GWh
+"Wind",27774,2005, GWh
+"Wind",31324,2006, GWh
+"Wind",40507,2007, GWh
+"Wind",41385,2008, GWh
+"Wind",39420,2009, GWh
+"Wind",38547,2010, GWh
+"Wind",49858,2011, GWh
+"Wind",51680,2012, GWh
+"Wind",52737,2013, GWh
+"Wind",58497,2014, GWh
+"Wind",80624,2015, GWh
+"Wind",79924,2016, GWh
+"Wind",105693,2017, GWh
+"Wind",109951,2018, GWh
+"Wind",125894,2019, GWh
+"Wind",132102,2020, GWh
+"Wind",114169,2021, GWh
+"Wind",124816,2022, GWh
+"Wind",140538,2023, GWh
+"Wind",138914,2024, GWh
+"Solar PV",60,2000, GWh
+"Solar PV",116,2001, GWh
+"Solar PV",188,2002, GWh
+"Solar PV",313,2003, GWh
+"Solar PV",557,2004, GWh
+"Solar PV",1282,2005, GWh
+"Solar PV",2220,2006, GWh
+"Solar PV",3075,2007, GWh
+"Solar PV",4420,2008, GWh
+"Solar PV",6583,2009, GWh
+"Solar PV",11729,2010, GWh
+"Solar PV",19599,2011, GWh
+"Solar PV",26380,2012, GWh
+"Solar PV",31010,2013, GWh
+"Solar PV",36056,2014, GWh
+"Solar PV",38726,2015, GWh
+"Solar PV",38098,2016, GWh
+"Solar PV",39401,2017, GWh
+"Solar PV",43459,2018, GWh
+"Solar PV",44383,2019, GWh
+"Solar PV",49496,2020, GWh
+"Solar PV",50472,2021, GWh
+"Solar PV",61022,2022, GWh
+"Solar PV",63576,2023, GWh
+"Solar PV",74297,2024, GWh
+"Solar thermal",,2000, GWh
+"Solar thermal",,2001, GWh
+"Solar thermal",,2002, GWh
+"Solar thermal",,2003, GWh
+"Solar thermal",,2004, GWh
+"Solar thermal",,2005, GWh
+"Solar thermal",,2006, GWh
+"Solar thermal",,2007, GWh
+"Solar thermal",,2008, GWh
+"Solar thermal",0,2009, GWh
+"Solar thermal",,2010, GWh
+"Solar thermal",,2011, GWh
+"Solar thermal",,2012, GWh
+"Solar thermal",,2013, GWh
+"Solar thermal",,2014, GWh
+"Solar thermal",,2015, GWh
+"Solar thermal",,2016, GWh
+"Solar thermal",,2017, GWh
+"Solar thermal",,2018, GWh
+"Solar thermal",,2019, GWh
+"Solar thermal",,2020, GWh
+"Solar thermal",,2021, GWh
+"Solar thermal",,2022, GWh
+"Solar thermal",,2023, GWh
+"Solar thermal",,2024, GWh
+"Geothermal",,2000, GWh
+"Geothermal",,2001, GWh
+"Geothermal",,2002, GWh
+"Geothermal",,2003, GWh
+"Geothermal",,2004, GWh
+"Geothermal",,2005, GWh
+"Geothermal",,2006, GWh
+"Geothermal",,2007, GWh
+"Geothermal",18,2008, GWh
+"Geothermal",19,2009, GWh
+"Geothermal",28,2010, GWh
+"Geothermal",19,2011, GWh
+"Geothermal",25,2012, GWh
+"Geothermal",80,2013, GWh
+"Geothermal",98,2014, GWh
+"Geothermal",133,2015, GWh
+"Geothermal",175,2016, GWh
+"Geothermal",163,2017, GWh
+"Geothermal",178,2018, GWh
+"Geothermal",197,2019, GWh
+"Geothermal",231,2020, GWh
+"Geothermal",244,2021, GWh
+"Geothermal",206,2022, GWh
+"Geothermal",195,2023, GWh
+"Geothermal",214,2024, GWh

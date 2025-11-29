@@ -1,0 +1,23 @@
+B 3 C o m p i l a t i o n
+B 48 Equation Listing    SOLVE liberland_energy Using LP From line 35
+D 51 eq_obj
+D 56 eq_demand
+D 61 eq_emissions
+D 66 eq_wind_max
+D 71 eq_smr_min
+B 77 Column Listing      SOLVE liberland_energy Using LP From line 35
+E 80 gen
+E 102 total_cost
+B 110 Range Statistics    SOLVE liberland_energy Using LP From line 35
+B 121 Model Statistics    SOLVE liberland_energy Using LP From line 35
+B 134 Solution Report     SOLVE liberland_energy Using LP From line 35
+F 167 eq_obj
+F 168 eq_demand
+F 169 eq_emissions
+F 170 eq_wind_max
+F 171 eq_smr_min
+G 179 gen
+G 190 total_cost
+B 200 E x e c u t i o n
+I 200 gen
+I 207 total_cost

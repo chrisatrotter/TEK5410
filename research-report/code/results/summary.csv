@@ -1,0 +1,12 @@
+scenario,year,bess_cost_kwh,bess_duration_h,curtailment_reduction_twh,net_benefit_busd
+2024_Baseline,2024,192.0,4,0.0,0.0
+2030_Conservative,2030,84.0,4,0.0,0.0
+2030_80VRES,2030,84.0,4,0.0,0.0
+2035_Hybrid_4h,2035,64.0,4,423.5,7.2
+2035_Hybrid_8h,2035,64.0,8,882.3,20.7
+2035_Hybrid_12h,2035,64.0,12,882.3,20.4
+2035_Aggressive_4h,2035,64.0,4,410.6,3.2
+2035_Aggressive_8h,2035,64.0,8,876.2,16.8
+2035_Aggressive_12h,2035,64.0,12,876.2,16.4
+2028_Early_Deploy,2028,100.0,6,554.8,11.8
+2032_Mid_Deploy,2032,74.0,8,917.3,19.8

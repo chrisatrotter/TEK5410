@@ -1,0 +1,221 @@
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Sets
+   2      tech "Technologies" /wind "Onshore wind", gas "Natural gas", smr "SMR nuclear", hydro "Hydro power"/;
+   3   
+   4  Parameters
+   5      lcoe(tech) "LCOE in $/MWh"
+   6          /wind 150, gas 100, smr 400, hydro 160/
+   7      emis_fact(tech) "Emission factor in tCO2e/MWh"
+   8          /wind 0, gas 0.2, smr 0, hydro 0/
+   9      demand "Annual demand in GWh" /4000/
+  10      max_emis "Max emissions in tCO2e" /100000/
+  11      max_wind "Max wind generation in GWh" /1200/
+  12      min_smr "Min SMR generation in GWh" /200/;
+  13   
+  14  Positive Variables
+  15      gen(tech) "Annual generation by technology in GWh";
+  16   
+  17  Free Variable
+  18      total_cost "Total system cost in $";
+  19   
+  20  Equations
+  21      eq_obj "Objective: minimize total cost"
+  22      eq_demand "Meet or exceed demand"
+  23      eq_emissions "Emissions limit"
+  24      eq_wind_max "Wind generation limit"
+  25      eq_smr_min "Minimum SMR generation";
+  26   
+  27  eq_obj .. total_cost =e= sum(tech, lcoe(tech) * gen(tech) * 1000);
+  28  eq_demand .. sum(tech, gen(tech)) =g= demand;
+  29  eq_emissions .. sum(tech, emis_fact(tech) * gen(tech) * 1000) =l= max_emis;
+  30  eq_wind_max .. gen('wind') =l= max_wind;
+  31  eq_smr_min .. gen('smr') =g= min_smr;
+  32   
+  33  Model liberland_energy /all/;
+  34   
+  35  Solve liberland_energy using lp minimizing total_cost;
+  36   
+  37  Display gen.l, total_cost.l;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  51.1.0 2d039df5 DAX-DAC
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE liberland_energy Using LP From line 35
+
+
+---- eq_obj  =E=  Objective: minimize total cost
+
+eq_obj..  - 150000*gen(wind) - 100000*gen(gas) - 400000*gen(smr) - 160000*gen(hydro) + total_cost =E= 0 ; (LHS = 0)
+     
+
+---- eq_demand  =G=  Meet or exceed demand
+
+eq_demand..  gen(wind) + gen(gas) + gen(smr) + gen(hydro) =G= 4000 ; (LHS = 0, INFES = 4000 ****)
+     
+
+---- eq_emissions  =L=  Emissions limit
+
+eq_emissions..  200*gen(gas) =L= 100000 ; (LHS = 0)
+     
+
+---- eq_wind_max  =L=  Wind generation limit
+
+eq_wind_max..  gen(wind) =L= 1200 ; (LHS = 0)
+     
+
+---- eq_smr_min  =G=  Minimum SMR generation
+
+eq_smr_min..  gen(smr) =G= 200 ; (LHS = 0, INFES = 200 ****)
+     
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE liberland_energy Using LP From line 35
+
+
+---- gen  Annual generation by technology in GWh
+
+gen(wind)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+  -150000       eq_obj
+        1       eq_demand
+        1       eq_wind_max
+
+gen(gas)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+  -100000       eq_obj
+        1       eq_demand
+      200       eq_emissions
+
+gen(smr)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+  -400000       eq_obj
+        1       eq_demand
+        1       eq_smr_min
+
+REMAINING ENTRY SKIPPED
+
+---- total_cost  Total system cost in $
+
+total_cost
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       eq_obj
+
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE liberland_energy Using LP From line 35
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 2.000E+02, 1.000E+05] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.000E+00, 4.000E+05]
+
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE liberland_energy Using LP From line 35
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           5     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            12
+
+
+GENERATION TIME      =        0.002 SECONDS      4 MB  51.1.0 2d039df5 DAX-DAC
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE liberland_energy Using LP From line 35
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   liberland_energy    OBJECTIVE  total_cost
+     TYPE    LP                  DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  35
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE        646000000.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         0    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.1.2.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.00 ticks)
+
+
+Optimal solution found
+Objective:    646000000.000000
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU eq_obj              .              .              .             1.0000      
+---- EQU eq_demand       4000.0000      4000.0000        +INF       160000.0000      
+---- EQU eq_emissi~        -INF       100000.0000    100000.0000      -300.0000      
+---- EQU eq_wind_m~        -INF         1200.0000      1200.0000    -10000.0000      
+---- EQU eq_smr_min       200.0000       200.0000        +INF       240000.0000      
+
+  eq_obj  Objective: minimize total cost
+  eq_demand  Meet or exceed demand
+  eq_emissions  Emissions limit
+  eq_wind_max  Wind generation limit
+  eq_smr_min  Minimum SMR generation
+
+---- VAR gen  Annual generation by technology in GWh
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+wind           .          1200.0000        +INF             .          
+gas            .           500.0000        +INF             .          
+smr            .           200.0000        +INF             .          
+hydro          .          2100.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR total_cost        -INF      6.4600000E+8        +INF             .          
+
+  total_cost  Total system cost in $
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 51.1.0  2d039df5 Sep 13, 2025          DAX-DAC arm 64bit/macOS - 09/23/25 22:21:19 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     37 VARIABLE gen.L  Annual generation by technology in GWh
+
+wind  1200.000,    gas    500.000,    smr    200.000,    hydro 2100.000
+
+
+----     37 VARIABLE total_cost.L          =  6.460000E+8  Total system cost in $
+
+
+EXECUTION TIME       =        0.020 SECONDS      4 MB  51.1.0 2d039df5 DAX-DAC
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G250826+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      /Users/chrisat/Development/school/tek5410/assignment2/assignment2.gms
+Output     /Users/chrisat/Development/school/tek5410/assignment2/assignment2.lst
